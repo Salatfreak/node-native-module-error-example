@@ -55,6 +55,7 @@ This was tested in a Debian bullseye virtual machine with podman version 3.0.1.
 The parcel watcher could be fixed by either masking signal 34 while polling or
 by recovering from EINTR errors instead of crashing. Masking the signal could
 be accomplished by replacing `poll` with [`ppoll`][ppoll] and using the sigmask
-argument.
+argument. [This issue][issue] reports the problem in the parcel watcher repository.
 
 [ppoll]: https://linux.die.net/man/2/ppoll
+[issue]: https://github.com/parcel-bundler/watcher/issues/141
